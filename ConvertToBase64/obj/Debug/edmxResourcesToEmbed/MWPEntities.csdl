@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MWPEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="MWP_CMSBANNER" EntityType="Model.MWP_CMSBANNER" />
+    <EntitySet Name="MWP_CMSBANNERCONTENT" EntityType="Model.MWP_CMSBANNERCONTENT" />
+    <EntitySet Name="MWP_CMSCONTENT" EntityType="Model.MWP_CMSCONTENT" />
+    <EntitySet Name="MWP_CMSMENU" EntityType="Model.MWP_CMSMENU" />
+    <EntitySet Name="MWP_DLCATEGORY" EntityType="Model.MWP_DLCATEGORY" />
+    <EntitySet Name="MWP_DLCONTENT" EntityType="Model.MWP_DLCONTENT" />
+    <EntitySet Name="MWP_DLCONTENTFILE" EntityType="Model.MWP_DLCONTENTFILE" />
+    <EntitySet Name="MWP_FAQ" EntityType="Model.MWP_FAQ" />
+    <EntitySet Name="MWP_FAQCATEGORY" EntityType="Model.MWP_FAQCATEGORY" />
+    <EntitySet Name="MWP_IWANTTO" EntityType="Model.MWP_IWANTTO" />
+    <EntitySet Name="MWP_IWANTTODTL" EntityType="Model.MWP_IWANTTODTL" />
+    <EntitySet Name="MWP_MCGALLERYALBUM" EntityType="Model.MWP_MCGALLERYALBUM" />
+    <EntitySet Name="MWP_MCGALLERYIMAGE" EntityType="Model.MWP_MCGALLERYIMAGE" />
+    <EntitySet Name="MWP_MCPHOTORELEASE" EntityType="Model.MWP_MCPHOTORELEASE" />
+    <EntitySet Name="MWP_MCPHOTORELEASEIMG" EntityType="Model.MWP_MCPHOTORELEASEIMG" />
+    <EntitySet Name="MWP_MCSPEECHES" EntityType="Model.MWP_MCSPEECHES" />
+    <EntitySet Name="MWP_THREADABLE" EntityType="Model.MWP_THREADABLE" />
+    <EntitySet Name="MWP_THREADABLEEVENT" EntityType="Model.MWP_THREADABLEEVENT" />
+    <EntitySet Name="MWP_THREADABLEEVENTCAT" EntityType="Model.MWP_THREADABLEEVENTCAT" />
+    <EntitySet Name="MWP_THREADABLENEWS" EntityType="Model.MWP_THREADABLENEWS" />
+    <EntitySet Name="MWP_THREADABLEREPLY" EntityType="Model.MWP_THREADABLEREPLY" />
+    <EntitySet Name="MWP_THREADCATEGORY" EntityType="Model.MWP_THREADCATEGORY" />
+    <EntitySet Name="MWP_VIDEO" EntityType="Model.MWP_VIDEO" />
+    <EntitySet Name="MWP_VIDEOFILE" EntityType="Model.MWP_VIDEOFILE" />
+    <AssociationSet Name="MWP_CMSCONTENT_MWP_CMSMEN_FK1" Association="Model.MWP_CMSCONTENT_MWP_CMSMEN_FK1">
+      <End Role="MWP_CMSMENU" EntitySet="MWP_CMSMENU" />
+      <End Role="MWP_CMSCONTENT" EntitySet="MWP_CMSCONTENT" />
+    </AssociationSet>
+    <AssociationSet Name="MWP_CMSMENU_MWP_CMSMENU_FK1" Association="Model.MWP_CMSMENU_MWP_CMSMENU_FK1">
+      <End Role="MWP_CMSMENU" EntitySet="MWP_CMSMENU" />
+      <End Role="MWP_CMSMENU1" EntitySet="MWP_CMSMENU" />
+    </AssociationSet>
+    <AssociationSet Name="MWP_FAQ_MWP_FAQCATEGORY_FK1" Association="Model.MWP_FAQ_MWP_FAQCATEGORY_FK1">
+      <End Role="MWP_FAQCATEGORY" EntitySet="MWP_FAQCATEGORY" />
+      <End Role="MWP_FAQ" EntitySet="MWP_FAQ" />
+    </AssociationSet>
+    <AssociationSet Name="MWP_THREADABLE_MWP_THREAD_FK1" Association="Model.MWP_THREADABLE_MWP_THREAD_FK1">
+      <End Role="MWP_THREADCATEGORY" EntitySet="MWP_THREADCATEGORY" />
+      <End Role="MWP_THREADABLE" EntitySet="MWP_THREADABLE" />
+    </AssociationSet>
+    <EntitySet Name="TEST_IMAGE_CONVERT" EntityType="Model.TEST_IMAGE_CONVERT" />
+  </EntityContainer>
+  <EntityType Name="MWP_CMSBANNER">
+    <Key>
+      <PropertyRef Name="BANNERID" />
+      <PropertyRef Name="BANNERSTARTTIME" />
+      <PropertyRef Name="BANNERENDTIME" />
+      <PropertyRef Name="BANNERTITLE" />
+      <PropertyRef Name="BANNERTYPE" />
+    </Key>
+    <Property Name="BANNERID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="BANNERSTARTTIME" Type="DateTime" Nullable="false" />
+    <Property Name="BANNERENDTIME" Type="DateTime" Nullable="false" />
+    <Property Name="BANNERTITLE" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="BANNERTYPE" Type="Int16" Nullable="false" />
+    <Property Name="TEMP_ID" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="MWP_CMSBANNERCONTENT">
+    <Key>
+      <PropertyRef Name="BANNERID" />
+    </Key>
+    <Property Name="BANNERID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="BANNERCONTENT" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="TEMP_FILE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MWP_CMSCONTENT">
+    <Key>
+      <PropertyRef Name="MENUID" />
+      <PropertyRef Name="CONTENTTYPE" />
+    </Key>
+    <Property Name="MENUID" Type="Int32" Nullable="false" />
+    <Property Name="CONTENTTYPE" Type="Int16" Nullable="false" />
+    <Property Name="CONTENTDETAIL" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="TEMP_ID" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="MWP_CMSMENU" Relationship="Model.MWP_CMSCONTENT_MWP_CMSMEN_FK1" FromRole="MWP_CMSCONTENT" ToRole="MWP_CMSMENU" />
+  </EntityType>
+  <EntityType Name="MWP_CMSMENU">
+    <Key>
+      <PropertyRef Name="MENUID" />
+    </Key>
+    <Property Name="MENUID" Type="Int32" Nullable="false" />
+    <Property Name="MENUPARENT" Type="Int32" Nullable="false" />
+    <Property Name="MENULABEL" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="MENUORDER" Type="Int32" Nullable="false" />
+    <Property Name="ISPUBLISHED" Type="Int16" Nullable="false" />
+    <Property Name="TEMP_ID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TEMP_CONTENT_ID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TEMP_LEVEL" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="MWP_CMSCONTENT" Relationship="Model.MWP_CMSCONTENT_MWP_CMSMEN_FK1" FromRole="MWP_CMSMENU" ToRole="MWP_CMSCONTENT" />
+    <NavigationProperty Name="MWP_CMSMENU1" Relationship="Model.MWP_CMSMENU_MWP_CMSMENU_FK1" FromRole="MWP_CMSMENU" ToRole="MWP_CMSMENU1" />
+    <NavigationProperty Name="MWP_CMSMENU2" Relationship="Model.MWP_CMSMENU_MWP_CMSMENU_FK1" FromRole="MWP_CMSMENU1" ToRole="MWP_CMSMENU" />
+  </EntityType>
+  <EntityType Name="MWP_DLCATEGORY">
+    <Key>
+      <PropertyRef Name="DLCATEGORYID" />
+      <PropertyRef Name="DLPARENTID" />
+      <PropertyRef Name="DLCATEGORYNAME" />
+      <PropertyRef Name="DLSORTORDER" />
+      <PropertyRef Name="ISPUBLISHED" />
+    </Key>
+    <Property Name="DLCATEGORYID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DLPARENTID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DLCATEGORYNAME" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="DLSORTORDER" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ISPUBLISHED" Type="Int16" Nullable="false" />
+    <Property Name="TEMP_ID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TEMP_TYPE" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MWP_DLCONTENT">
+    <Key>
+      <PropertyRef Name="DLCONTENTID" />
+      <PropertyRef Name="DLCATEGORYID" />
+      <PropertyRef Name="ISPUBLISHED" />
+      <PropertyRef Name="DLSORTORDER" />
+    </Key>
+    <Property Name="DLCONTENTID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DLCATEGORYID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DLCONTENTTITLE" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="DLCONTENTDESCRIPTION" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ISPUBLISHED" Type="Int16" Nullable="false" />
+    <Property Name="DLSORTORDER" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="TEMP_ORIGIN" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="TEMP_ID" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="MWP_DLCONTENTFILE">
+    <Key>
+      <PropertyRef Name="DLCONTENTID" />
+    </Key>
+    <Property Name="DLCONTENTID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DLFILE" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="TEMP_FILE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MWP_FAQ">
+    <Key>
+      <PropertyRef Name="FAQ_ID" />
+    </Key>
+    <Property Name="FAQ_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="FAQ_CATEGORY_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="FAQ_QUESTION" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="FAQ_ANSWER" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="FAQ_ISPUBLISHED" Type="Int16" Nullable="false" />
+    <Property Name="TEMP_ID" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="MWP_FAQCATEGORY" Relationship="Model.MWP_FAQ_MWP_FAQCATEGORY_FK1" FromRole="MWP_FAQ" ToRole="MWP_FAQCATEGORY" />
+  </EntityType>
+  <EntityType Name="MWP_FAQCATEGORY">
+    <Key>
+      <PropertyRef Name="FAQ_CATEGORY_ID" />
+    </Key>
+    <Property Name="FAQ_CATEGORY_ID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="FAQ_CATEGORY_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="FAQ_DESCRIPTION" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="FAQ_ISPUBLISHED" Type="Int16" Nullable="false" />
+    <Property Name="TEMP_ID" Type="Decimal" Precision="38" Scale="0" />
+    <NavigationProperty Name="MWP_FAQ" Relationship="Model.MWP_FAQ_MWP_FAQCATEGORY_FK1" FromRole="MWP_FAQCATEGORY" ToRole="MWP_FAQ" />
+  </EntityType>
+  <EntityType Name="MWP_IWANTTO">
+    <Key>
+      <PropertyRef Name="IWANTTOID" />
+      <PropertyRef Name="IWANTTOTITLE" />
+      <PropertyRef Name="IWANTTOORDER" />
+    </Key>
+    <Property Name="IWANTTOID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="IWANTTOTITLE" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="IWANTTOORDER" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="MWP_IWANTTODTL">
+    <Key>
+      <PropertyRef Name="IWANTTODTLID" />
+      <PropertyRef Name="IWANTTOID" />
+      <PropertyRef Name="DTLTYPE" />
+      <PropertyRef Name="DTLCONTENT" />
+    </Key>
+    <Property Name="IWANTTODTLID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="IWANTTOID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="DTLTYPE" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="DTLCONTENT" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MWP_MCGALLERYALBUM">
+    <Key>
+      <PropertyRef Name="ALBUMID" />
+      <PropertyRef Name="ALBUMNAME" />
+      <PropertyRef Name="ALBUMEVENTDATE" />
+      <PropertyRef Name="ALBUMTHUMBNAIL" />
+      <PropertyRef Name="ISPUBLISHED" />
+    </Key>
+    <Property Name="ALBUMID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ALBUMNAME" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="ALBUMEVENTDATE" Type="DateTime" Nullable="false" />
+    <Property Name="ALBUMTHUMBNAIL" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ISPUBLISHED" Type="Int16" Nullable="false" />
+    <Property Name="TEMP_ID" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="MWP_MCGALLERYIMAGE">
+    <Key>
+      <PropertyRef Name="IMAGEID" />
+      <PropertyRef Name="ALBUMID" />
+      <PropertyRef Name="ISPUBLISHED" />
+    </Key>
+    <Property Name="IMAGEID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="ALBUMID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="CAPTION" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="CONTENT" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ISPUBLISHED" Type="Int16" Nullable="false" />
+    <Property Name="TEMP_ID" Type="Decimal" Precision="38" Scale="0" />
+    <Property Name="TEMP_FILE" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MWP_MCPHOTORELEASE">
+    <Key>
+      <PropertyRef Name="PHOTOID" />
+      <PropertyRef Name="PHOTOSUBJECT" />
+      <PropertyRef Name="TIMESTAMP" />
+      <PropertyRef Name="ISPUBLISHED" />
+    </Key>
+    <Property Name="PHOTOID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="PHOTOSUBJECT" Type="String" Nullable="false" MaxLength="350" Unicode="true" FixedLength="false" />
+    <Property Name="PHOTOCAPTION" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="TIMESTAMP" Type="DateTime" Nullable="false" />
+    <Property Name="ISPUBLISHED" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MWP_MCPHOTORELEASEIMG">
+    <Key>
+      <PropertyRef Name="PHOTOID" />
+      <PropertyRef Name="PHOTOIMAGE" />
+    </Key>
+    <Property Name="PHOTOID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="PHOTOIMAGE" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MWP_MCSPEECHES">
+    <Key>
+      <PropertyRef Name="SPEECHID" />
+      <PropertyRef Name="SPEECHTITLE" />
+      <PropertyRef Name="SPEECHTIMESTAMP" />
+      <PropertyRef Name="SPEECHCONTENT" />
+      <PropertyRef Name="ISPUBLISHED" />
+    </Key>
+    <Property Name="SPEECHID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="SPEECHTITLE" Type="String" Nullable="false" MaxLength="350" Unicode="true" FixedLength="false" />
+    <Property Name="SPEECHTIMESTAMP" Type="DateTime" Nullable="false" />
+    <Property Name="SPEECHCONTENT" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ISPUBLISHED" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MWP_THREADABLE">
+    <Key>
+      <PropertyRef Name="THREADID" />
+      <PropertyRef Name="THREADCATEGORYID" />
+      <PropertyRef Name="THREADTITLE" />
+      <PropertyRef Name="THREADTIMESTAMP" />
+      <PropertyRef Name="THREADABLEAUTHOR" />
+      <PropertyRef Name="THREADCONTENT" />
+      <PropertyRef Name="THREADISPUBLISHED" />
+    </Key>
+    <Property Name="THREADID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="THREADCATEGORYID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="THREADTITLE" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="THREADTIMESTAMP" Type="DateTime" Nullable="false" />
+    <Property Name="THREADABLEAUTHOR" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="THREADCONTENT" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="THREADISPUBLISHED" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="MWP_THREADCATEGORY" Relationship="Model.MWP_THREADABLE_MWP_THREAD_FK1" FromRole="MWP_THREADABLE" ToRole="MWP_THREADCATEGORY" />
+  </EntityType>
+  <EntityType Name="MWP_THREADABLEEVENT">
+    <Key>
+      <PropertyRef Name="THREADID" />
+      <PropertyRef Name="EVENTCATEGORYID" />
+      <PropertyRef Name="EVENTSTARTTIME" />
+      <PropertyRef Name="EVENTENDTIME" />
+      <PropertyRef Name="EVENTPOSTSTARTTIME" />
+      <PropertyRef Name="EVENTPOSTENDTIME" />
+    </Key>
+    <Property Name="THREADID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="EVENTCATEGORYID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="EVENTSTARTTIME" Type="DateTime" Nullable="false" />
+    <Property Name="EVENTENDTIME" Type="DateTime" Nullable="false" />
+    <Property Name="EVENTURL" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="EVENTPOSTSTARTTIME" Type="DateTime" Nullable="false" />
+    <Property Name="EVENTPOSTENDTIME" Type="DateTime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MWP_THREADABLEEVENTCAT">
+    <Key>
+      <PropertyRef Name="EVENTCATEGORYID" />
+      <PropertyRef Name="EVENTCATEGORYNAME" />
+    </Key>
+    <Property Name="EVENTCATEGORYID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="EVENTCATEGORYNAME" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EVENTCATEGORYDESC" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MWP_THREADABLENEWS">
+    <Key>
+      <PropertyRef Name="THREADID" />
+      <PropertyRef Name="NEWSEXCERP" />
+    </Key>
+    <Property Name="THREADID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="NEWSEXCERP" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="NEWSIMAGE" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="MWP_THREADABLEREPLY">
+    <Key>
+      <PropertyRef Name="REPLYID" />
+      <PropertyRef Name="THREADID" />
+      <PropertyRef Name="REPLYAUTHOR" />
+      <PropertyRef Name="REPLYTIMESTAMP" />
+      <PropertyRef Name="REPLYCONTENT" />
+      <PropertyRef Name="REPLYPARENT" />
+    </Key>
+    <Property Name="REPLYID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="THREADID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="REPLYAUTHOR" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="REPLYTIMESTAMP" Type="DateTime" Nullable="false" />
+    <Property Name="REPLYCONTENT" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="REPLYPARENT" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="MWP_THREADCATEGORY">
+    <Key>
+      <PropertyRef Name="THREADCATEGORYID" />
+    </Key>
+    <Property Name="THREADCATEGORYID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="THREADCATEGORYNAME" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="THREADCATEGORYDESC" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="THREADCATEGORYISBUILTIN" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="MWP_THREADABLE" Relationship="Model.MWP_THREADABLE_MWP_THREAD_FK1" FromRole="MWP_THREADCATEGORY" ToRole="MWP_THREADABLE" />
+  </EntityType>
+  <EntityType Name="MWP_VIDEO">
+    <Key>
+      <PropertyRef Name="VIDEOID" />
+      <PropertyRef Name="VIDEOTITLE" />
+      <PropertyRef Name="VIDEOTIMESTAMP" />
+      <PropertyRef Name="ISPUBLISHED" />
+    </Key>
+    <Property Name="VIDEOID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="VIDEOTITLE" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="VIDEODESCRIPTION" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="VIDEOTIMESTAMP" Type="DateTime" Nullable="false" />
+    <Property Name="ISPUBLISHED" Type="Int16" Nullable="false" />
+    <Property Name="TEMP_ID" Type="Decimal" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="MWP_VIDEOFILE">
+    <Key>
+      <PropertyRef Name="VIDEOID" />
+    </Key>
+    <Property Name="VIDEOID" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+    <Property Name="VIDEOCONTENT" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="TEMP_PATH" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <Association Name="MWP_CMSCONTENT_MWP_CMSMEN_FK1">
+    <End Role="MWP_CMSMENU" Type="Model.MWP_CMSMENU" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MWP_CMSCONTENT" Type="Model.MWP_CMSCONTENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MWP_CMSMENU">
+        <PropertyRef Name="MENUID" />
+      </Principal>
+      <Dependent Role="MWP_CMSCONTENT">
+        <PropertyRef Name="MENUID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MWP_CMSMENU_MWP_CMSMENU_FK1">
+    <End Role="MWP_CMSMENU" Type="Model.MWP_CMSMENU" Multiplicity="1" />
+    <End Role="MWP_CMSMENU1" Type="Model.MWP_CMSMENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MWP_CMSMENU">
+        <PropertyRef Name="MENUID" />
+      </Principal>
+      <Dependent Role="MWP_CMSMENU1">
+        <PropertyRef Name="MENUPARENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MWP_FAQ_MWP_FAQCATEGORY_FK1">
+    <End Role="MWP_FAQCATEGORY" Type="Model.MWP_FAQCATEGORY" Multiplicity="1" />
+    <End Role="MWP_FAQ" Type="Model.MWP_FAQ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MWP_FAQCATEGORY">
+        <PropertyRef Name="FAQ_CATEGORY_ID" />
+      </Principal>
+      <Dependent Role="MWP_FAQ">
+        <PropertyRef Name="FAQ_CATEGORY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MWP_THREADABLE_MWP_THREAD_FK1">
+    <End Role="MWP_THREADCATEGORY" Type="Model.MWP_THREADCATEGORY" Multiplicity="1" />
+    <End Role="MWP_THREADABLE" Type="Model.MWP_THREADABLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MWP_THREADCATEGORY">
+        <PropertyRef Name="THREADCATEGORYID" />
+      </Principal>
+      <Dependent Role="MWP_THREADABLE">
+        <PropertyRef Name="THREADCATEGORYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TEST_IMAGE_CONVERT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Binary" Name="DATA_IMAGE" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="TEMP_PATH" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

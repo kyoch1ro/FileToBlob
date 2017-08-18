@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="MWPEntities">
+    <EntitySetMapping Name="MWP_CMSBANNER">
+      <EntityTypeMapping TypeName="Model.MWP_CMSBANNER">
+        <MappingFragment StoreEntitySet="MWP_CMSBANNER">
+          <ScalarProperty Name="BANNERID" ColumnName="BANNERID" />
+          <ScalarProperty Name="BANNERSTARTTIME" ColumnName="BANNERSTARTTIME" />
+          <ScalarProperty Name="BANNERENDTIME" ColumnName="BANNERENDTIME" />
+          <ScalarProperty Name="BANNERTITLE" ColumnName="BANNERTITLE" />
+          <ScalarProperty Name="BANNERTYPE" ColumnName="BANNERTYPE" />
+          <ScalarProperty Name="TEMP_ID" ColumnName="TEMP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_CMSBANNERCONTENT">
+      <EntityTypeMapping TypeName="Model.MWP_CMSBANNERCONTENT">
+        <MappingFragment StoreEntitySet="MWP_CMSBANNERCONTENT">
+          <ScalarProperty Name="BANNERID" ColumnName="BANNERID" />
+          <ScalarProperty Name="BANNERCONTENT" ColumnName="BANNERCONTENT" />
+          <ScalarProperty Name="TEMP_FILE" ColumnName="TEMP_FILE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_CMSCONTENT">
+      <EntityTypeMapping TypeName="Model.MWP_CMSCONTENT">
+        <MappingFragment StoreEntitySet="MWP_CMSCONTENT">
+          <ScalarProperty Name="MENUID" ColumnName="MENUID" />
+          <ScalarProperty Name="CONTENTTYPE" ColumnName="CONTENTTYPE" />
+          <ScalarProperty Name="CONTENTDETAIL" ColumnName="CONTENTDETAIL" />
+          <ScalarProperty Name="TEMP_ID" ColumnName="TEMP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_CMSMENU">
+      <EntityTypeMapping TypeName="Model.MWP_CMSMENU">
+        <MappingFragment StoreEntitySet="MWP_CMSMENU">
+          <ScalarProperty Name="MENUID" ColumnName="MENUID" />
+          <ScalarProperty Name="MENUPARENT" ColumnName="MENUPARENT" />
+          <ScalarProperty Name="MENULABEL" ColumnName="MENULABEL" />
+          <ScalarProperty Name="MENUORDER" ColumnName="MENUORDER" />
+          <ScalarProperty Name="ISPUBLISHED" ColumnName="ISPUBLISHED" />
+          <ScalarProperty Name="TEMP_ID" ColumnName="TEMP_ID" />
+          <ScalarProperty Name="TEMP_CONTENT_ID" ColumnName="TEMP_CONTENT_ID" />
+          <ScalarProperty Name="TEMP_LEVEL" ColumnName="TEMP_LEVEL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_DLCATEGORY">
+      <EntityTypeMapping TypeName="Model.MWP_DLCATEGORY">
+        <MappingFragment StoreEntitySet="MWP_DLCATEGORY">
+          <ScalarProperty Name="DLCATEGORYID" ColumnName="DLCATEGORYID" />
+          <ScalarProperty Name="DLPARENTID" ColumnName="DLPARENTID" />
+          <ScalarProperty Name="DLCATEGORYNAME" ColumnName="DLCATEGORYNAME" />
+          <ScalarProperty Name="DLSORTORDER" ColumnName="DLSORTORDER" />
+          <ScalarProperty Name="ISPUBLISHED" ColumnName="ISPUBLISHED" />
+          <ScalarProperty Name="TEMP_ID" ColumnName="TEMP_ID" />
+          <ScalarProperty Name="TEMP_TYPE" ColumnName="TEMP_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_DLCONTENT">
+      <EntityTypeMapping TypeName="Model.MWP_DLCONTENT">
+        <MappingFragment StoreEntitySet="MWP_DLCONTENT">
+          <ScalarProperty Name="DLCONTENTID" ColumnName="DLCONTENTID" />
+          <ScalarProperty Name="DLCATEGORYID" ColumnName="DLCATEGORYID" />
+          <ScalarProperty Name="DLCONTENTTITLE" ColumnName="DLCONTENTTITLE" />
+          <ScalarProperty Name="DLCONTENTDESCRIPTION" ColumnName="DLCONTENTDESCRIPTION" />
+          <ScalarProperty Name="ISPUBLISHED" ColumnName="ISPUBLISHED" />
+          <ScalarProperty Name="DLSORTORDER" ColumnName="DLSORTORDER" />
+          <ScalarProperty Name="TEMP_ORIGIN" ColumnName="TEMP_ORIGIN" />
+          <ScalarProperty Name="TEMP_ID" ColumnName="TEMP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_DLCONTENTFILE">
+      <EntityTypeMapping TypeName="Model.MWP_DLCONTENTFILE">
+        <MappingFragment StoreEntitySet="MWP_DLCONTENTFILE">
+          <ScalarProperty Name="DLCONTENTID" ColumnName="DLCONTENTID" />
+          <ScalarProperty Name="DLFILE" ColumnName="DLFILE" />
+          <ScalarProperty Name="TEMP_FILE" ColumnName="TEMP_FILE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_FAQ">
+      <EntityTypeMapping TypeName="Model.MWP_FAQ">
+        <MappingFragment StoreEntitySet="MWP_FAQ">
+          <ScalarProperty Name="FAQ_ID" ColumnName="FAQ_ID" />
+          <ScalarProperty Name="FAQ_CATEGORY_ID" ColumnName="FAQ_CATEGORY_ID" />
+          <ScalarProperty Name="FAQ_QUESTION" ColumnName="FAQ_QUESTION" />
+          <ScalarProperty Name="FAQ_ANSWER" ColumnName="FAQ_ANSWER" />
+          <ScalarProperty Name="FAQ_ISPUBLISHED" ColumnName="FAQ_ISPUBLISHED" />
+          <ScalarProperty Name="TEMP_ID" ColumnName="TEMP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_FAQCATEGORY">
+      <EntityTypeMapping TypeName="Model.MWP_FAQCATEGORY">
+        <MappingFragment StoreEntitySet="MWP_FAQCATEGORY">
+          <ScalarProperty Name="FAQ_CATEGORY_ID" ColumnName="FAQ_CATEGORY_ID" />
+          <ScalarProperty Name="FAQ_CATEGORY_NAME" ColumnName="FAQ_CATEGORY_NAME" />
+          <ScalarProperty Name="FAQ_DESCRIPTION" ColumnName="FAQ_DESCRIPTION" />
+          <ScalarProperty Name="FAQ_ISPUBLISHED" ColumnName="FAQ_ISPUBLISHED" />
+          <ScalarProperty Name="TEMP_ID" ColumnName="TEMP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_IWANTTO">
+      <EntityTypeMapping TypeName="Model.MWP_IWANTTO">
+        <MappingFragment StoreEntitySet="MWP_IWANTTO">
+          <ScalarProperty Name="IWANTTOID" ColumnName="IWANTTOID" />
+          <ScalarProperty Name="IWANTTOTITLE" ColumnName="IWANTTOTITLE" />
+          <ScalarProperty Name="IWANTTOORDER" ColumnName="IWANTTOORDER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_IWANTTODTL">
+      <EntityTypeMapping TypeName="Model.MWP_IWANTTODTL">
+        <MappingFragment StoreEntitySet="MWP_IWANTTODTL">
+          <ScalarProperty Name="IWANTTODTLID" ColumnName="IWANTTODTLID" />
+          <ScalarProperty Name="IWANTTOID" ColumnName="IWANTTOID" />
+          <ScalarProperty Name="DTLTYPE" ColumnName="DTLTYPE" />
+          <ScalarProperty Name="DTLCONTENT" ColumnName="DTLCONTENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_MCGALLERYALBUM">
+      <EntityTypeMapping TypeName="Model.MWP_MCGALLERYALBUM">
+        <MappingFragment StoreEntitySet="MWP_MCGALLERYALBUM">
+          <ScalarProperty Name="ALBUMID" ColumnName="ALBUMID" />
+          <ScalarProperty Name="ALBUMNAME" ColumnName="ALBUMNAME" />
+          <ScalarProperty Name="ALBUMEVENTDATE" ColumnName="ALBUMEVENTDATE" />
+          <ScalarProperty Name="ALBUMTHUMBNAIL" ColumnName="ALBUMTHUMBNAIL" />
+          <ScalarProperty Name="ISPUBLISHED" ColumnName="ISPUBLISHED" />
+          <ScalarProperty Name="TEMP_ID" ColumnName="TEMP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_MCGALLERYIMAGE">
+      <EntityTypeMapping TypeName="Model.MWP_MCGALLERYIMAGE">
+        <MappingFragment StoreEntitySet="MWP_MCGALLERYIMAGE">
+          <ScalarProperty Name="IMAGEID" ColumnName="IMAGEID" />
+          <ScalarProperty Name="ALBUMID" ColumnName="ALBUMID" />
+          <ScalarProperty Name="CAPTION" ColumnName="CAPTION" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="ISPUBLISHED" ColumnName="ISPUBLISHED" />
+          <ScalarProperty Name="TEMP_ID" ColumnName="TEMP_ID" />
+          <ScalarProperty Name="TEMP_FILE" ColumnName="TEMP_FILE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_MCPHOTORELEASE">
+      <EntityTypeMapping TypeName="Model.MWP_MCPHOTORELEASE">
+        <MappingFragment StoreEntitySet="MWP_MCPHOTORELEASE">
+          <ScalarProperty Name="PHOTOID" ColumnName="PHOTOID" />
+          <ScalarProperty Name="PHOTOSUBJECT" ColumnName="PHOTOSUBJECT" />
+          <ScalarProperty Name="PHOTOCAPTION" ColumnName="PHOTOCAPTION" />
+          <ScalarProperty Name="TIMESTAMP" ColumnName="TIMESTAMP" />
+          <ScalarProperty Name="ISPUBLISHED" ColumnName="ISPUBLISHED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_MCPHOTORELEASEIMG">
+      <EntityTypeMapping TypeName="Model.MWP_MCPHOTORELEASEIMG">
+        <MappingFragment StoreEntitySet="MWP_MCPHOTORELEASEIMG">
+          <ScalarProperty Name="PHOTOID" ColumnName="PHOTOID" />
+          <ScalarProperty Name="PHOTOIMAGE" ColumnName="PHOTOIMAGE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_MCSPEECHES">
+      <EntityTypeMapping TypeName="Model.MWP_MCSPEECHES">
+        <MappingFragment StoreEntitySet="MWP_MCSPEECHES">
+          <ScalarProperty Name="SPEECHID" ColumnName="SPEECHID" />
+          <ScalarProperty Name="SPEECHTITLE" ColumnName="SPEECHTITLE" />
+          <ScalarProperty Name="SPEECHTIMESTAMP" ColumnName="SPEECHTIMESTAMP" />
+          <ScalarProperty Name="SPEECHCONTENT" ColumnName="SPEECHCONTENT" />
+          <ScalarProperty Name="ISPUBLISHED" ColumnName="ISPUBLISHED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_THREADABLE">
+      <EntityTypeMapping TypeName="Model.MWP_THREADABLE">
+        <MappingFragment StoreEntitySet="MWP_THREADABLE">
+          <ScalarProperty Name="THREADID" ColumnName="THREADID" />
+          <ScalarProperty Name="THREADCATEGORYID" ColumnName="THREADCATEGORYID" />
+          <ScalarProperty Name="THREADTITLE" ColumnName="THREADTITLE" />
+          <ScalarProperty Name="THREADTIMESTAMP" ColumnName="THREADTIMESTAMP" />
+          <ScalarProperty Name="THREADABLEAUTHOR" ColumnName="THREADABLEAUTHOR" />
+          <ScalarProperty Name="THREADCONTENT" ColumnName="THREADCONTENT" />
+          <ScalarProperty Name="THREADISPUBLISHED" ColumnName="THREADISPUBLISHED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_THREADABLEEVENT">
+      <EntityTypeMapping TypeName="Model.MWP_THREADABLEEVENT">
+        <MappingFragment StoreEntitySet="MWP_THREADABLEEVENT">
+          <ScalarProperty Name="THREADID" ColumnName="THREADID" />
+          <ScalarProperty Name="EVENTCATEGORYID" ColumnName="EVENTCATEGORYID" />
+          <ScalarProperty Name="EVENTSTARTTIME" ColumnName="EVENTSTARTTIME" />
+          <ScalarProperty Name="EVENTENDTIME" ColumnName="EVENTENDTIME" />
+          <ScalarProperty Name="EVENTURL" ColumnName="EVENTURL" />
+          <ScalarProperty Name="EVENTPOSTSTARTTIME" ColumnName="EVENTPOSTSTARTTIME" />
+          <ScalarProperty Name="EVENTPOSTENDTIME" ColumnName="EVENTPOSTENDTIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_THREADABLEEVENTCAT">
+      <EntityTypeMapping TypeName="Model.MWP_THREADABLEEVENTCAT">
+        <MappingFragment StoreEntitySet="MWP_THREADABLEEVENTCAT">
+          <ScalarProperty Name="EVENTCATEGORYID" ColumnName="EVENTCATEGORYID" />
+          <ScalarProperty Name="EVENTCATEGORYNAME" ColumnName="EVENTCATEGORYNAME" />
+          <ScalarProperty Name="EVENTCATEGORYDESC" ColumnName="EVENTCATEGORYDESC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_THREADABLENEWS">
+      <EntityTypeMapping TypeName="Model.MWP_THREADABLENEWS">
+        <MappingFragment StoreEntitySet="MWP_THREADABLENEWS">
+          <ScalarProperty Name="THREADID" ColumnName="THREADID" />
+          <ScalarProperty Name="NEWSEXCERP" ColumnName="NEWSEXCERP" />
+          <ScalarProperty Name="NEWSIMAGE" ColumnName="NEWSIMAGE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_THREADABLEREPLY">
+      <EntityTypeMapping TypeName="Model.MWP_THREADABLEREPLY">
+        <MappingFragment StoreEntitySet="MWP_THREADABLEREPLY">
+          <ScalarProperty Name="REPLYID" ColumnName="REPLYID" />
+          <ScalarProperty Name="THREADID" ColumnName="THREADID" />
+          <ScalarProperty Name="REPLYAUTHOR" ColumnName="REPLYAUTHOR" />
+          <ScalarProperty Name="REPLYTIMESTAMP" ColumnName="REPLYTIMESTAMP" />
+          <ScalarProperty Name="REPLYCONTENT" ColumnName="REPLYCONTENT" />
+          <ScalarProperty Name="REPLYPARENT" ColumnName="REPLYPARENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_THREADCATEGORY">
+      <EntityTypeMapping TypeName="Model.MWP_THREADCATEGORY">
+        <MappingFragment StoreEntitySet="MWP_THREADCATEGORY">
+          <ScalarProperty Name="THREADCATEGORYID" ColumnName="THREADCATEGORYID" />
+          <ScalarProperty Name="THREADCATEGORYNAME" ColumnName="THREADCATEGORYNAME" />
+          <ScalarProperty Name="THREADCATEGORYDESC" ColumnName="THREADCATEGORYDESC" />
+          <ScalarProperty Name="THREADCATEGORYISBUILTIN" ColumnName="THREADCATEGORYISBUILTIN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_VIDEO">
+      <EntityTypeMapping TypeName="Model.MWP_VIDEO">
+        <MappingFragment StoreEntitySet="MWP_VIDEO">
+          <ScalarProperty Name="VIDEOID" ColumnName="VIDEOID" />
+          <ScalarProperty Name="VIDEOTITLE" ColumnName="VIDEOTITLE" />
+          <ScalarProperty Name="VIDEODESCRIPTION" ColumnName="VIDEODESCRIPTION" />
+          <ScalarProperty Name="VIDEOTIMESTAMP" ColumnName="VIDEOTIMESTAMP" />
+          <ScalarProperty Name="ISPUBLISHED" ColumnName="ISPUBLISHED" />
+          <ScalarProperty Name="TEMP_ID" ColumnName="TEMP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MWP_VIDEOFILE">
+      <EntityTypeMapping TypeName="Model.MWP_VIDEOFILE">
+        <MappingFragment StoreEntitySet="MWP_VIDEOFILE">
+          <ScalarProperty Name="VIDEOID" ColumnName="VIDEOID" />
+          <ScalarProperty Name="VIDEOCONTENT" ColumnName="VIDEOCONTENT" />
+          <ScalarProperty Name="TEMP_PATH" ColumnName="TEMP_PATH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEST_IMAGE_CONVERT">
+      <EntityTypeMapping TypeName="Model.TEST_IMAGE_CONVERT">
+        <MappingFragment StoreEntitySet="TEST_IMAGE_CONVERT">
+          <ScalarProperty Name="TEMP_PATH" ColumnName="TEMP_PATH" />
+          <ScalarProperty Name="DATA_IMAGE" ColumnName="DATA_IMAGE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
